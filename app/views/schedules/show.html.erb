@@ -1,0 +1,54 @@
+<div class="main posts-show">
+  <h3>スケジュール詳細</h3>
+  <div class="container-area">
+    <div class="posts-show-item">
+      <table>
+        <tr>
+          <th>
+            <a>タイトル</a>
+          </th>
+          <td>
+            <%= @schedule.title %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <a>開始日</a>
+          </th>
+          <td>
+            <%= @schedule.start.strftime("%Y/%m/%d") %>
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <a>終了日</a>
+          </th>
+          <td>
+            <%= @schedule.finish.strftime("%Y/%m/%d") %>
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <a>終日</a>
+          </th>
+          <td>
+            <% if @schedule.all_day %>
+              <a>◯</a>
+            <% end %>
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <a>メモ</a>
+          </th>
+          <td id = "memo">
+            <%= @schedule.memo %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
