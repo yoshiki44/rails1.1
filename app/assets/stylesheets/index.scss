@@ -1,0 +1,26 @@
+table{
+    border-collapse: collapse;
+}
+
+.schedule-item > table th{
+    border: 1px solid;
+}
+
+.schedule-item > table td{
+    border: 1px solid;
+}
+
+.information{
+    margin-top: 30px;
+    width: 700px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.information-1{
+    font-size: 22px;
+}
+
+.information-2{
+    margin-left: 200px;
+}

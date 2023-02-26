@@ -1,0 +1,58 @@
+<div class="text-success">
+  <%= flash[:notice] %>
+</div>
+<div class="text-danger">
+  <%= flash[:alert] %>
+</div>
+
+<h3>編集ページ</h3>
+
+  <%= render "shared/error" %>
+
+<%= form_tag("/schedules/#{@schedule.id}", method: :patch) do %>
+  <table>
+    <tr>
+      <th>
+        <a>タイトル</a>
+      </th>
+      <td>
+        <textarea name="title"><%= @schedule.title %></textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <a>開始日</a>
+      </th>
+      <td>
+        <input type="date" name="start" value=<%= @schedule.start %> />
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <a>終了日</a>
+      </th>
+      <td>
+        <input type="date" name="finish" value=<%= @schedule.finish %> />
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <a>終日</a>
+      </th>
+      <td>
+        <input name="all_day" type="hidden" value="0">
+        <input type="checkbox" name="all_day" value="1" >
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <a>メモ</a>
+      </th>
+      <td>
+        <textarea name="memo"><%= @schedule.memo %></textarea>
+      </td>
+    </tr>
+  </table>
+  <input type="submit" value="更新">
+<% end %>

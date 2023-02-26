@@ -1,0 +1,47 @@
+<div class="text-success">
+  <%= flash[:notice] %>
+</div>
+<div class="text-danger">
+  <%= flash[:alert] %>
+</div>
+
+<div class = "schedule-item">
+    <h3>スケジュール一覧</h3>
+
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>終日</th>
+            <th>更新日</th>
+            <th>確認</th>
+            <th>編集</th>
+            <th>削除</th>
+        </tr>
+        <% @schedules.each do |schedule| %>
+        <tr>
+
+            <td><%= schedule.id %></td>
+            <td><%= schedule.title %></td>
+            <td><%= schedule.start.strftime("%Y/%m/%d") %></td>
+            <td><%= schedule.finish.strftime("%Y/%m/%d") %></td>
+            <td>
+                <% if schedule.all_day %>
+                    <a>◯</a>
+                <% end %>
+            </td>
+            <td><%= schedule.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
+            <td><%= link_to"確認","/schedules/#{schedule.id}" %></td>
+            <td><%= link_to"編集","/schedules/#{schedule.id}/edit" %></td>
+            <td><%= link_to"削除","/schedules/#{schedule.id}", method: :delete, data:{ confirm: '本当に削除しますか?' } %></td>
+
+        </tr>
+        <% end %>
+    </table>
+    <div class ="information">
+        <a class = "information-1" ><%= "合計予定数：#{@schedules.count}件" %></a>
+        <a class = "information-2" ><%= "本日の日付：#{Date.today.strftime("%Y/%m/%d")}" %></a>
+    </div>

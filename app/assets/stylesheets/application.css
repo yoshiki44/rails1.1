@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+ header{
+  background-color: #CC66FF;
+  margin-bottom: 20px;
+ }
+
+ body{
+  font-family: "游ゴシック";
+ }
+  .top-page{
+   font-size : 20px;
+  }
+   .new-page{
+   font-size : 20px;
+  }
+
+ table th, table td{
+ border: 1px solid;
+ padding: 10px 20px;
+ }
+
+ table th{
+ background-color: #00CCFF;
+ }
+
+ table td{
+  background-color: #CCFFFF;
+ }
+
+ #memo{
+ height: 300px;
+ }

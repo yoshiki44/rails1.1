@@ -1,0 +1,19 @@
+textarea[name="memo"]{
+    height: 200px;
+}
+
+textarea{
+    width: 100%;
+    font-size: 12px;
+    height: 20px;
+}
+
+input[name="start"][name="end"]{
+    width: 100%;
+    font-size: 12px;
+}
+
+input[type="submit"]{
+    font-size: 12px;
+    margin-top: 20px;
+}
